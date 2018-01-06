@@ -10,6 +10,7 @@ print('Getting Player Fantasy Data...')
 globs = glob('nba_data_*')
 files = [(datetime.strptime(f[9:19], '%Y_%m_%d'), f) for f in globs]
 _, f_name = max(files)
+print('Using {}...'.format(f_name))
 p_list = pd.read_hdf(f_name, 'p_list')
 p_logs = pd.read_hdf(f_name, 'p_logs')
 
